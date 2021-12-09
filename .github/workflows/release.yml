@@ -28,10 +28,9 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Add Helm repos
+      - name: Update Helm depencencies
         run: |
-          helm repo add common https://charts.bitnami.com/bitnami
-          helm repo update
+          helm dependency update marquez
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
