@@ -30,6 +30,8 @@ jobs:
 
       - name: Update Helm depencencies
         run: |
+          helm repo add common https://charts.bitnami.com/bitnami
+          helm repo update
           helm dependency update chart/marquez
 
       - name: Run chart-releaser
